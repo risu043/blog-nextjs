@@ -13,11 +13,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'risuLog',
     description: 'プログラミング学習ログ',
-    url: 'https://example.com',
+    url: 'https://risu-3-kurumi.vercel.app/',
     type: 'website',
     images: [
       {
-        url: 'https://example.com/ogp.png',
+        url: 'https://risu-3-kurumi.vercel.app/ogp.png',
         width: 900,
         height: 400,
         alt: 'OG image',
