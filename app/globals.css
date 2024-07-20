@@ -67,10 +67,18 @@
   }
 
   .content h2 {
+    font-size: 1.75rem;
+    background-color: #d4d4d4;
+    border-left: 4px solid #737373;
+    border-bottom: 2px solid #737373;
+    margin: 4rem 0 2rem;
+    padding: 0.5rem 1.5rem;
+  }
+  .content h3 {
     font-size: 1.5rem;
     border-left: 4px solid #737373;
     margin: 2rem 0 1rem;
-    padding: 0.25rem 1rem;
+    padding: 0.125rem 1.5rem;
   }
   .content figure {
     margin: 1rem 0;
@@ -96,6 +104,8 @@
     display: block;
     margin: 1rem 0;
     padding: 1rem;
+    white-space: pre;
+    overflow-x: auto;
   }
 
   .checkbox {
