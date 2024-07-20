@@ -41,7 +41,7 @@ export default async function StaticDetailPage({
         alt="Example Image"
         width={500}
         height={300}
-        className="w-full mb-4"
+        className="w-full h-auto object-cover mb-4"
       />
 
       <div

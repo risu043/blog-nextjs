@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getCategories } from '../../../libs/client';
+import { getCategories } from './../../libs/client';
 import { FaFolder } from 'react-icons/fa';
 
 export default async function Nav() {
@@ -9,7 +9,7 @@ export default async function Nav() {
     return <h1>No Contents</h1>;
   }
   return (
-    <nav className="bg-white p-4 mb-8 rounded-xl h-fit">
+    <nav className="card-body p-4 mb-8 rounded-xl h-fit">
       <h2 className="font-kiwi text-xl text-center mb-4">Category</h2>
       <ul className="">
         {contents.map((category) => (

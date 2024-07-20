@@ -18,12 +18,12 @@ const Pagination = ({ totalCount, current = 1 }: PaginationProps) => {
           {current !== number ? (
             <Link
               href={`/blogs/page/${number}`}
-              className="block text-neutral-300 bg-white rounded-full w-10 h-10 grid place-content-center hover:bg-rose-300 hover:text-white"
+              className="block pagination rounded-full w-10 h-10 grid place-content-center hover:bg-rose-300 hover:text-white"
             >
               {number}
             </Link>
           ) : (
-            <span className="block bg-neutral-300 text-white rounded-full w-10 h-10 grid place-content-center currunt">
+            <span className="block pagination rounded-full w-10 h-10 grid place-content-center currunt">
               {number}
             </span>
           )}

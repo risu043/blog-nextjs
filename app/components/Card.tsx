@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Blog } from '../../../libs/client';
+import { Blog } from './../../libs/client';
 import { FaFolder } from 'react-icons/fa';
 
 type CardProps = {
@@ -9,7 +9,7 @@ type CardProps = {
 
 const Card: React.FC<CardProps> = ({ blog }) => {
   return (
-    <li className="bg-white mb-8 rounded-xl" key={blog.id}>
+    <li className="card-body mb-8 rounded-xl" key={blog.id}>
       <Link href={`/blogs/${blog.id}`}>
         <div className="overflow-hidden rounded-t-xl">
           <Image
