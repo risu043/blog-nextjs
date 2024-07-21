@@ -23,3 +23,22 @@ export default async function Home() {
     </>
   );
 }
+
+export const metadata: Metadata = {
+  title: 'risuLog',
+  description: 'プログラミング学習ログ',
+  openGraph: {
+    title: 'risuLog',
+    description: 'プログラミング学習ログ',
+    url: 'https://risu-3-kurumi.vercel.app/',
+    type: 'website',
+    images: [
+      {
+        url: 'https://risu-3-kurumi.vercel.app/ogp.png',
+        width: 900,
+        height: 400,
+        alt: 'OG image',
+      },
+    ],
+  },
+};
