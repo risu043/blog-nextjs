@@ -3,6 +3,7 @@ import { formatRichText } from '../../../libs/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaFolder } from 'react-icons/fa';
+import { Metadata } from 'next';
 
 export async function generateStaticParams() {
   const { contents } = await getBlogs();
@@ -15,13 +16,38 @@ export async function generateStaticParams() {
   return [...paths];
 }
 
+export async function generateMetadata({
+  params: { blogId },
+}: {
+  params: { blogId: string };
+}): Promise<Metadata> {
+  const blog = await getDetail(blogId);
+  return {
+    title: blog.title,
+    description: 'risuLog:プログラミング学習ログ',
+    openGraph: {
+      title: blog.title,
+      description: 'risuLog:プログラミング学習ログ',
+      url: `https://risu-3-kurumi.vercel.app/blogs/${blogId}`,
+      type: 'website',
+      images: [
+        {
+          url: blog.eyecatch.url,
+          width: 1200,
+          height: 630,
+          alt: 'OG image',
+        },
+      ],
+    },
+  };
+}
+
 export default async function StaticDetailPage({
   params: { blogId },
 }: {
   params: { blogId: string };
 }) {
   const blog = await getDetail(blogId);
-  console.log('ok');
 
   return (
     <>

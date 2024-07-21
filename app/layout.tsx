@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import './globals.css';
 import { Inter } from 'next/font/google';
@@ -8,25 +7,6 @@ import Nav from './components/Nav';
 import Profile from './components/Profile';
 
 const inter = Inter({ subsets: ['latin'] });
-
-export const metadata: Metadata = {
-  title: 'risuLog',
-  description: 'プログラミング学習ログ',
-  openGraph: {
-    title: 'risuLog',
-    description: 'プログラミング学習ログ',
-    url: 'https://risu-3-kurumi.vercel.app/',
-    type: 'website',
-    images: [
-      {
-        url: 'https://risu-3-kurumi.vercel.app/ogp.png',
-        width: 900,
-        height: 400,
-        alt: 'OG image',
-      },
-    ],
-  },
-};
 
 export default function RootLayout({
   children,

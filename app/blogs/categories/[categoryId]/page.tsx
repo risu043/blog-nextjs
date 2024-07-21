@@ -1,6 +1,5 @@
-import { getDetail, getBlogs, getCategories } from '../../../../libs/client';
-import Image from 'next/image';
-import Link from 'next/link';
+import { getBlogs, getCategories } from '../../../../libs/client';
+import { Metadata } from 'next';
 import Card from '../../../components/Card';
 import { FaFolder } from 'react-icons/fa';
 
@@ -44,3 +43,22 @@ export default async function StaticDetailPage({
     </>
   );
 }
+
+export const metadata: Metadata = {
+  title: 'risuLog',
+  description: 'プログラミング学習ログ',
+  openGraph: {
+    title: 'risuLog',
+    description: 'プログラミング学習ログ',
+    url: 'https://risu-3-kurumi.vercel.app/',
+    type: 'website',
+    images: [
+      {
+        url: 'https://risu-3-kurumi.vercel.app/ogp.png',
+        width: 900,
+        height: 400,
+        alt: 'OG image',
+      },
+    ],
+  },
+};
