@@ -97,15 +97,40 @@
     background-color: #f0f0f0;
   }
 
-  code {
-    background-color: #333333;
+  pre {
+    background: #333;
     border-radius: 10px;
     color: white;
-    display: block;
-    margin: 1rem 0;
+    margin: 1.3rem 0;
     padding: 1rem;
-    white-space: pre;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    max-width: 345px;
+  }
+
+  pre::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  pre::-webkit-scrollbar-thumb {
+    background-color: #737373;
+    border-radius: 4px;
+  }
+
+  pre::-webkit-scrollbar-thumb:hover {
+    background-color: #a3a3a3;
+  }
+
+  @media (640px < width < 768px) {
+    pre {
+      max-width: 610px;
+    }
+  }
+  @media (768px <= width) {
+    pre {
+      max-width: 100%;
+    }
   }
 
   .checkbox {
