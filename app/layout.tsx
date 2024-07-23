@@ -5,6 +5,7 @@ import { ThemeProvider } from './components/theme-provider';
 import { ThemeSwitch } from './components/ThemeSwitch';
 import Nav from './components/Nav';
 import Profile from './components/Profile';
+import SearchField from './components/SearchField';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
             <main>{children}</main>
             <div>
               <Profile />
+              <SearchField />
               <Nav />
             </div>
           </div>

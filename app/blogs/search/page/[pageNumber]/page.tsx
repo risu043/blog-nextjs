@@ -1,0 +1,80 @@
+import { Metadata } from 'next';
+import Pagination from '../../../../components/Pagination';
+import Card from '../../../../components/Card';
+import { getBlogs } from '../../../../../libs/client';
+
+const PER_PAGE = 10;
+
+type Props = {
+  params: {
+    current: string;
+  };
+  searchParams: {
+    q?: string;
+  };
+};
+
+export default async function BlogPageId({ params, searchParams }: Props) {
+  const pageNumber = params.current;
+  const id = parseInt(pageNumber, 10);
+
+  const data = await getBlogs({
+    offset: (id - 1) * PER_PAGE,
+    limit: PER_PAGE,
+    q: searchParams.q,
+  });
+
+  const contents = data.contents;
+  const totalCount = data.totalCount;
+
+  return (
+    <div>
+      <ul className="grid md:grid-cols-2 gap-8">
+        {contents.map((blog) => (
+          <Card key={blog.id} blog={blog} />
+        ))}
+      </ul>
+      <Pagination
+        totalCount={totalCount}
+        current={id}
+        basePath="/search"
+        q={searchParams.q}
+      />
+    </div>
+  );
+}
+
+// 動的なページを作成
+export const generateStaticParams = async () => {
+  const repos = await getBlogs();
+
+  const range = (start: number, end: number) =>
+    [...Array(end - start + 1)].map((_, i) => start + i);
+
+  const paths = range(1, Math.ceil(repos.totalCount / PER_PAGE)).map(
+    (repo) => ({
+      id: repo.toString(),
+    })
+  );
+
+  return paths;
+};
+
+export const metadata: Metadata = {
+  title: 'risuLog',
+  description: 'プログラミング学習ログ',
+  openGraph: {
+    title: 'risuLog',
+    description: 'プログラミング学習ログ',
+    url: 'https://risu-3-kurumi.vercel.app/',
+    type: 'website',
+    images: [
+      {
+        url: 'https://risu-3-kurumi.vercel.app/ogp.png',
+        width: 900,
+        height: 400,
+        alt: 'OG image',
+      },
+    ],
+  },
+};

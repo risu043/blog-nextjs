@@ -3,6 +3,8 @@ import Link from 'next/link';
 type PaginationProps = {
   totalCount: number;
   current?: number;
+  basePath?: string;
+  q?: string;
 };
 
 const Pagination = ({ totalCount, current = 1 }: PaginationProps) => {

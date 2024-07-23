@@ -5,13 +5,13 @@ import { Metadata } from 'next';
 
 export default async function Home() {
   const data = await getBlogs();
-
   const contents = data.contents;
   const totalCount = data.totalCount;
 
   if (!contents) {
     return <h1>No Contents</h1>;
   }
+
   return (
     <>
       <ul className="grid md:grid-cols-2 gap-8">
