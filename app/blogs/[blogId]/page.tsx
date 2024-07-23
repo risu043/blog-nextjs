@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaFolder } from 'react-icons/fa';
 import { Metadata } from 'next';
+import ShareButton from '@/app/components/shareButton';
 
 export async function generateStaticParams() {
   const { contents } = await getBlogs();
@@ -49,6 +50,9 @@ export default async function StaticDetailPage({
 }) {
   const blog = await getDetail(blogId);
 
+  const url = `https://risu-3-kurumi.vercel.app/blogs/${blogId}`;
+  const text = blog.title;
+
   return (
     <>
       <p className="text-3xl mb-2">{blog.title}</p>
@@ -76,6 +80,7 @@ export default async function StaticDetailPage({
           __html: `${formatRichText(blog.content)}`,
         }}
       />
+      <ShareButton url={url} text={text} />
     </>
   );
 }
