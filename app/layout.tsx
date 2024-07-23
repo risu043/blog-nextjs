@@ -7,6 +7,8 @@ import Nav from './components/Nav';
 import Profile from './components/Profile';
 import SearchField from './components/SearchField';
 
+import { Suspense } from 'react';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({
@@ -25,7 +27,9 @@ export default function RootLayout({
             <ThemeSwitch />
           </header>
           <div className="container mx-auto max-w-screen-lg grid md:grid-cols-[minmax(500px,_1fr)_200px] gap-8 p-4">
-            <main>{children}</main>
+            <Suspense fallback={<div>Loading...</div>}>
+              <main>{children}</main>
+            </Suspense>
             <div>
               <Profile />
               <SearchField />
