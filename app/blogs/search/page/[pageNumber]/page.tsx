@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { Suspense } from 'react';
 import Pagination from '../../../../components/Pagination';
 import Card from '../../../../components/Card';
 import { getBlogs } from '../../../../../libs/client';
@@ -28,19 +29,21 @@ export default async function BlogPageId({ params, searchParams }: Props) {
   const totalCount = data.totalCount;
 
   return (
-    <div>
-      <ul className="grid md:grid-cols-2 gap-8">
-        {contents.map((blog) => (
-          <Card key={blog.id} blog={blog} />
-        ))}
-      </ul>
-      <Pagination
-        totalCount={totalCount}
-        current={id}
-        basePath="/search"
-        q={searchParams.q}
-      />
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <div>
+        <ul className="grid md:grid-cols-2 gap-8">
+          {contents.map((blog) => (
+            <Card key={blog.id} blog={blog} />
+          ))}
+        </ul>
+        <Pagination
+          totalCount={totalCount}
+          current={id}
+          basePath="/search"
+          q={searchParams.q}
+        />
+      </div>
+    </Suspense>
   );
 }
 
