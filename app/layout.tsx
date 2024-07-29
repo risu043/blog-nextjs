@@ -6,6 +6,7 @@ import { ThemeSwitch } from './components/ThemeSwitch';
 import Nav from './components/Nav';
 import Profile from './components/Profile';
 import SearchField from './components/SearchField';
+import { Toaster } from 'react-hot-toast';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -26,6 +27,7 @@ export default function RootLayout({
           </header>
           <div className="container mx-auto max-w-screen-lg grid md:grid-cols-[minmax(500px,_1fr)_200px] gap-8 p-4">
             <main>{children}</main>
+            <Toaster />
             <div>
               <Profile />
               <SearchField />

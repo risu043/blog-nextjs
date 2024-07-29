@@ -44,6 +44,11 @@
     background-color: var(--card-color-dark);
   }
 
+  html[data-theme='dark'] form input,
+  html[data-theme='dark'] form textarea {
+    background-color: var(--card-color-dark);
+  }
+
   html {
     font-size: 100%;
   }
@@ -147,7 +152,7 @@
   .checkbox::before {
     content: '';
     position: absolute;
-    top: 2px;
+    top: 3px;
     left: 2px;
     width: 20px;
     height: 20px;

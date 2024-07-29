@@ -17,6 +17,7 @@ const Card: React.FC<CardProps> = ({ blog }) => {
             alt="Example Image"
             width={500}
             height={300}
+            priority={true}
             className="w-full h-60 object-cover rounded-t-xl transition-transform duration-500 hover:scale-110"
           />
         </div>

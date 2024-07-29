@@ -71,6 +71,7 @@ export default async function StaticDetailPage({
         alt="Example Image"
         width={500}
         height={300}
+        priority={true}
         className="w-full h-auto object-cover mb-4"
       />
 

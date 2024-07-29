@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FaGithub } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
+import { MdMail } from 'react-icons/md';
 
 const Profile: React.FC = () => {
   return (
@@ -10,8 +11,9 @@ const Profile: React.FC = () => {
       <Image
         src="/risu.jpg"
         alt="Example Image"
-        width={500}
-        height={300}
+        width={100}
+        height={100}
+        priority={true}
         className="w-20 h-20 object-cover rounded-full mx-auto mb-1"
       />
       <p className="text-center mb-2">りす</p>
@@ -22,6 +24,9 @@ const Profile: React.FC = () => {
         </Link>
         <Link href="https://x.com/risu043">
           <FaXTwitter size={25} />
+        </Link>
+        <Link href="/blogs/mail">
+          <MdMail size={30} />
         </Link>
       </div>
     </div>
