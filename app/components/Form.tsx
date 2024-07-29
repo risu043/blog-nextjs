@@ -6,6 +6,7 @@ import TextInput from './TextInput';
 import TextArea from './TextArea';
 import InputLabel from './InputLabel';
 import Button from './Button';
+import { Spinner } from './Spinner';
 
 type Inputs = {
   name: string;
@@ -18,7 +19,7 @@ export default function Form() {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
@@ -72,7 +73,9 @@ export default function Form() {
             <span className="text-rose-600">お問い合わせ内容は必須です</span>
           )}
         </div>
-        <Button type="submit">送信する</Button>
+        <Button type="submit" isSubmitting={isSubmitting}>
+          {isSubmitting ? <Spinner /> : '送信する'}
+        </Button>
       </form>
     </>
   );

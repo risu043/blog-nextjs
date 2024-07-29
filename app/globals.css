@@ -168,4 +168,23 @@
   .checkbox:checked::before {
     left: 25px;
   }
+
+  .button {
+    border: 3px solid #fda4af;
+    border-radius: 100px;
+    color: #fda4af;
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 500;
+    overflow: hidden;
+    position: relative;
+    transition-duration: 0.4s;
+    z-index: 2;
+    padding: 1rem 2.5rem;
+    width: fit-content;
+    margin-inline: auto;
+    @media (768px > width) {
+      width: 100%;
+    }
+  }
 }

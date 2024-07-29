@@ -1,20 +1,23 @@
 import { ButtonHTMLAttributes } from 'react';
 
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  isSubmitting?: boolean;
+}
+
 export default function Button({
   className = '',
-  disabled,
+  isSubmitting = false,
   children,
   ...props
-}: ButtonHTMLAttributes<HTMLButtonElement>) {
+}: ButtonProps) {
   return (
     <button
       {...props}
-      className={
-        `text-lg px-8 py-4 block w-full md:w-fit md:mx-auto bg-neutral-300 border border-transparent rounded-full font-semibold text-white uppercase tracking-widest hover:bg-rose-300 focus:bg-rose-300 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150 ${
-          disabled && 'opacity-25'
-        } ` + className
-      }
-      disabled={disabled}
+      className={`text-xl ${
+        isSubmitting
+          ? 'bg-rose-400'
+          : 'text-rose-300 hover:text-white hover:bg-rose-300'
+      } transition duration-700 border border-rose-300 rounded-full h-16 md:w-60 w-full block mx-auto`}
     >
       {children}
     </button>
