@@ -145,7 +145,7 @@
   }
   .moon {
     top: 8px;
-    right: 6px;
+    right: 9px;
     z-index: 2;
   }
 
@@ -163,10 +163,10 @@
   .checkbox::before {
     content: '';
     position: absolute;
-    top: 4px;
+    top: 2px;
     left: 4px;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     background-color: var(--bg-color-light);
     border-radius: 20px;
     transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
@@ -178,7 +178,7 @@
     border-color: #a78bfa;
   }
   .checkbox:checked::before {
-    left: 35px;
+    left: 32px;
   }
 
   .hidden {
@@ -263,7 +263,7 @@
     top: 0;
     right: 0;
     left: 0;
-    height: 100vh;
+    height: 100dvh;
     z-index: 5;
     opacity: 0;
     visibility: hidden;
