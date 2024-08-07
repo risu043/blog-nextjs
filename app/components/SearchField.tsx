@@ -28,28 +28,31 @@ function Search() {
     setQuery(e.target.value);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>): void => {
+    const params = new URLSearchParams(searchParams);
+    if (query) {
+      params.set('q', query);
+    } else {
+      params.delete('q');
+    }
+    if (e.key === 'Enter') {
+      replace(`/blogs/search?${params.toString()}` as Route);
+      setQuery('');
+    }
+  };
+
   return (
     <>
       <div className="card-body p-4 mb-8 rounded-xl h-fit">
         <h2 className="font-kiwi text-xl text-center mb-4">Search</h2>
-        <form onSubmit={handleFormSubmit}>
-          <div className="flex w-full">
-            <input
-              type="text"
-              placeholder="Search..."
-              value={query}
-              onChange={handleInputChange}
-              className="w-[126px] flex-grow p-2 border rounded-l-lg "
-            />
-            <button
-              type="submit"
-              disabled={!query}
-              className="w-[60px] md:w-[42px] p-2 bg-rose-300 text-white rounded-r-lg disabled:bg-neutral-300 grid place-content-center"
-            >
-              <FaSearch />
-            </button>
-          </div>
-        </form>
+        <input
+          type="text"
+          placeholder="Search..."
+          value={query}
+          onChange={handleInputChange}
+          onKeyDown={handleKeyDown}
+          className="w-full border rounded-lg pl-8 pr-2 py-2 bg-no-repeat bg-[url('/search.svg')] bg-[left_8px_center] bg-[length:16px_100%]"
+        />
       </div>
     </>
   );

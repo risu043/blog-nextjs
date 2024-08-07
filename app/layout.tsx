@@ -3,6 +3,7 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from './components/theme-provider';
 import { ThemeSwitch } from './components/ThemeSwitch';
+import Header from './components/Header';
 import Nav from './components/Nav';
 import Profile from './components/Profile';
 import SearchField from './components/SearchField';
@@ -19,12 +20,13 @@ export default function RootLayout({
     <html lang="ja" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider>
-          <header className="pt-16 pb-8">
+          <Header />
+          <div className="pt-16 pb-8">
             <Link href="/">
               <h1 className="font-kiwi text-center text-6xl mb-8">risuLog</h1>
             </Link>
             <ThemeSwitch />
-          </header>
+          </div>
           <div className="container mx-auto max-w-screen-lg grid md:grid-cols-[minmax(500px,_1fr)_200px] gap-8 p-4">
             <main>{children}</main>
             <Toaster />
