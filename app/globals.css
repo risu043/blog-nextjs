@@ -66,6 +66,9 @@
 
   a {
     transition: 0.5s;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all;
   }
   a:hover {
     color: #fda4af;
