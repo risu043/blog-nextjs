@@ -76,7 +76,6 @@ export default async function StaticDetailPage({
         priority={true}
         className="w-full h-auto object-cover mb-4"
       />
-
       <div
         className="content"
         dangerouslySetInnerHTML={{

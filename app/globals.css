@@ -310,4 +310,56 @@
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
       0 4px 6px -4px rgb(0 0 0 / 0.1);
   }
+
+  html[data-theme='light'] .content .avatar {
+    background-color: var(--card-color-light);
+  }
+
+  html[data-theme='dark'] .content .avatar {
+    background-color: var(--card-color-dark);
+  }
+
+  .content .avatar {
+    border-radius: 1rem;
+    margin: 1rem 110px 1rem 0;
+    padding: 1rem;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  html[data-theme='light'] .content .avatar::after {
+    border-color: transparent transparent transparent var(--card-color-light);
+  }
+
+  html[data-theme='dark'] .content .avatar::after {
+    border-color: transparent transparent transparent var(--card-color-dark);
+  }
+
+  .content .avatar::after {
+    content: '';
+    position: absolute;
+    top: 70%;
+    right: 1px;
+    border-style: solid;
+    border-width: 0 0 16px 16px;
+    translate: 100% calc(-50% - 0.4px);
+    transform: skew(0, -10deg);
+    transform-origin: left;
+  }
+
+  .content .avatar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -110px;
+    display: block;
+    border-radius: 80px;
+    width: 80px;
+    height: 80px;
+    background-image: url('/risu.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }
