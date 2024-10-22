@@ -53,6 +53,8 @@ export default async function StaticDetailPage({
   const url = `https://risu-3-kurumi.vercel.app/blogs/${blogId}`;
   const text = blog.title;
 
+  const formattedContent = await formatRichText(blog.content);
+
   return (
     <>
       <p className="text-3xl mb-2">{blog.title}</p>
@@ -78,7 +80,7 @@ export default async function StaticDetailPage({
       <div
         className="content"
         dangerouslySetInnerHTML={{
-          __html: `${formatRichText(blog.content)}`,
+          __html: formattedContent,
         }}
       />
       <ShareButton url={url} text={text} />
