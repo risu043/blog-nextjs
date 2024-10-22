@@ -44,6 +44,14 @@
     background-color: var(--card-color-dark);
   }
 
+  html[data-theme='light'] .blog-card {
+    background-color: var(--card-color-light);
+  }
+
+  html[data-theme='dark'] .blog-card {
+    background-color: var(--card-color-dark);
+  }
+
   html[data-theme='dark'] form input,
   html[data-theme='dark'] form textarea {
     background-color: var(--card-color-dark);
@@ -289,7 +297,6 @@
   }
 
   .content .blog-card {
-    background-color: #fafafa;
     border: 1px solid #ccc;
     border-radius: 1rem;
     display: grid;
