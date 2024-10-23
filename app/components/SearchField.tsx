@@ -1,28 +1,18 @@
 'use client';
-
 import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import { Route } from 'next/types';
 import { useState } from 'react';
-import { FaSearch } from 'react-icons/fa';
 import { Suspense } from 'react';
 
-function Search() {
+interface SearchProps {
+  onSearchSubmit: () => void;
+}
+
+function Search({ onSearchSubmit }: SearchProps) {
   const searchParams = useSearchParams();
   const { replace } = useRouter();
   const [query, setQuery] = useState(searchParams.get('q')?.toString() || '');
-
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
-    e.preventDefault();
-    const params = new URLSearchParams(searchParams);
-    if (query) {
-      params.set('q', query);
-    } else {
-      params.delete('q');
-    }
-    replace(`/blogs/search?${params.toString()}` as Route);
-    setQuery('');
-  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setQuery(e.target.value);
@@ -38,13 +28,13 @@ function Search() {
     if (e.key === 'Enter') {
       replace(`/blogs/search?${params.toString()}` as Route);
       setQuery('');
+      onSearchSubmit();
     }
   };
 
   return (
     <>
-      <div className="card-body p-4 mb-8 rounded-xl h-fit">
-        <h2 className="font-kiwi text-xl text-center mb-4">Search</h2>
+      <div className="mb-4">
         <input
           type="text"
           placeholder="Search..."
@@ -58,10 +48,10 @@ function Search() {
   );
 }
 
-export default function SearchField() {
+export default function SearchField({ onSearchSubmit }: SearchProps) {
   return (
     <Suspense>
-      <Search />
+      <Search onSearchSubmit={onSearchSubmit} />
     </Suspense>
   );
 }

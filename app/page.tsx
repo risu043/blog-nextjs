@@ -14,7 +14,7 @@ export default async function Home() {
 
   return (
     <>
-      <ul className="grid md:grid-cols-2 gap-8">
+      <ul className="grid md:grid-cols-2 gap-4">
         {contents.map((blog) => (
           <Card key={blog.id} blog={blog} />
         ))}

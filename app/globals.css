@@ -150,21 +150,20 @@
   }
 
   .sun {
-    top: 7px;
-    left: 8px;
+    top: 3px;
+    left: 4px;
     z-index: 2;
   }
   .moon {
-    top: 8px;
-    right: 9px;
+    top: 5px;
+    right: 5px;
     z-index: 2;
   }
 
   .checkbox {
-    width: 70px;
-    height: 40px;
+    width: 50px;
+    height: 25px;
     background-color: #facc15;
-    border: 2px solid #facc15;
     border-radius: 50px;
     appearance: none;
     position: relative;
@@ -175,9 +174,9 @@
     content: '';
     position: absolute;
     top: 2px;
-    left: 4px;
-    width: 32px;
-    height: 32px;
+    left: 3px;
+    width: 21px;
+    height: 21px;
     background-color: var(--bg-color-light);
     border-radius: 20px;
     transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
@@ -186,10 +185,9 @@
 
   .checkbox:checked {
     background-color: #a78bfa;
-    border-color: #a78bfa;
   }
   .checkbox:checked::before {
-    left: 32px;
+    left: 26px;
   }
 
   .hidden {

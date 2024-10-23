@@ -31,13 +31,13 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = (props) => {
       className={`relative cursor-pointer flex items-center w-fit mx-auto ${props.className}`}
     >
       <LuSunDim
-        size={25}
+        size={18}
         className={`sun absolute text-yellow-400 ${
           theme === 'dark' ? 'hidden' : ''
         }`}
       />
       <FiMoon
-        size={22}
+        size={16}
         className={`moon absolute text-violet-400 ${
           theme === 'dark' ? '' : 'hidden'
         }`}

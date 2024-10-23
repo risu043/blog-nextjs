@@ -17,7 +17,7 @@ const Profile: React.FC = () => {
         className="w-20 h-20 object-cover rounded-full mx-auto mb-1"
       />
       <p className="text-center mb-2">りす</p>
-      <p className="text-sm mb-4">learning programming.</p>
+      <p className="text-sm mb-4">ものづくり好きのリスによる学習記録です。</p>
       <div className="border-dotted border-t-2 border-neutral-400 pt-4 flex justify-center gap-4">
         <Link href="https://github.com/risu043">
           <FaGithub size={25} />

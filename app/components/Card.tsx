@@ -9,7 +9,7 @@ type CardProps = {
 
 const Card: React.FC<CardProps> = ({ blog }) => {
   return (
-    <li className="card-body mb-8 rounded-xl" key={blog.id}>
+    <li className="card-body mb-4 rounded-xl" key={blog.id}>
       <Link href={`/blogs/${blog.id}`}>
         <div className="overflow-hidden rounded-t-xl">
           <Image
