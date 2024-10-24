@@ -9,7 +9,7 @@ const Profile: React.FC = () => {
     <div className="card-body p-4 mb-8 rounded-xl h-fit">
       <h2 className="font-kiwi text-xl text-center mb-4">Profile</h2>
       <Image
-        src="/risu.jpg"
+        src="/risu.png"
         alt="Example Image"
         width={100}
         height={100}

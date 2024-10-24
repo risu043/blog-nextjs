@@ -313,6 +313,18 @@
     width: 100%;
     object-fit: cover;
   }
+  .content .blog-card .domain-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .content .blog-card .domain-container img {
+    width: 16px;
+    height: 16px;
+  }
+  .content .blog-card .domain-container span {
+    text-decoration: underline;
+  }
 
   html[data-theme='light'] .content .avatar {
     background-color: var(--card-color-light);
@@ -361,7 +373,7 @@
     border-radius: 80px;
     width: 80px;
     height: 80px;
-    background-image: url('/risu.jpg');
+    background-image: url('/risu.png');
     background-size: contain;
     background-repeat: no-repeat;
   }

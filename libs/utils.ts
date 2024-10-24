@@ -49,17 +49,26 @@ export const formatRichText = async (richText: string) => {
         try {
           const res = await fetchOGPData(link);
           if (res.description) {
+            const truncatedTitle =
+              res.title && res.title.length > 30
+                ? res.title.substring(0, 40) + '...'
+                : res.title;
             const truncatedDescription =
               res.description.length > 40
                 ? res.description.substring(0, 40) + '...'
                 : res.description;
+            const domain = new URL(link).hostname;
+            const faviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=16`;
             const blogCardHTML = `
                 <div>
                   <div class="blog-card">
                     <div>
-                      <h4>${res.title}</h4>
+                      <h4>${truncatedTitle}</h4>
                       <p>${truncatedDescription}</p>
-                      <p>${link}</p>
+                      <p class="domain-container">
+                      <img src="${faviconUrl}" alt="favicon" width="16" height="16" />
+                      <span style="vertical-align: middle;">${domain}</span>
+                    </p>
                     </div>
                     <img src="${res.image}" alt="OGP image" width="200" />
                   </div>
