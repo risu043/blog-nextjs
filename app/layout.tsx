@@ -19,16 +19,16 @@ export default async function RootLayout({
     <html lang="ja" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider>
-          <div id="page" className="container mx-auto max-w-6xl">
+          <div id="page" className="container mx-auto max-w-6xl p-4">
             <Header categories={contents} />
             <main id="main">{children}</main>
             <Toaster />
-            <nav id="nav" className="md:sticky md:top-8">
+            <nav id="nav" className="md:sticky md:top-8 md:mt-0 mt-8">
               <Profile />
               <Nav />
             </nav>
             <footer>
-              <p className="text-center p-8">2024 &copy; りす</p>
+              <p className="text-center p-4">2024 &copy; りす</p>
             </footer>
           </div>
         </ThemeProvider>

@@ -27,7 +27,7 @@ const Header: FC<HeaderProps> = ({ categories }) => {
   return (
     <>
       <header>
-        <div className="grid grid-cols-[50px_1fr_50px] items-center mb-8 md:py-4">
+        <div className="grid grid-cols-[50px_1fr_50px] items-center mb-8">
           <button onClick={toggleSearch}>
             {isSearchVisible ? (
               <RxCross2 size={25} />

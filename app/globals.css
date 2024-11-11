@@ -19,15 +19,17 @@
   }
 
   #page {
-    display: grid;
     width: 100%;
     min-height: 100vh;
     grid-template:
       [header-left] 'head head' auto [header-right]
       [main-left] 'main nav' 1fr [main-right]
-      [footer-left] 'foot foot' 90px [footer-right]
+      [footer-left] 'foot foot' 60px [footer-right]
       / 1fr 240px;
     column-gap: 1rem;
+    @media (768px <= width) {
+      display: grid;
+    }
   }
 
   header {
@@ -243,87 +245,6 @@
       width: 100%;
     }
   }
-
-  /* ToggleButton.css */
-  /* 
-  .toggleButon {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    z-index: 10;
-    @media (768px < width) {
-      display: none;
-    }
-  }
-
-  .line-1 {
-    transform: translate(0, -8px);
-  }
-
-  .line-2 {
-    transform: translate(0, 0);
-  }
-
-  .line-3 {
-    transform: translate(0, 8px);
-  }
-
-  .line-1,
-  .line-2,
-  .line-3 {
-    content: '';
-    display: block;
-    height: 1px;
-    width: 100%;
-    border-top: 1px solid #737373;
-    transition: 0.4s;
-  }
-
-  .toggleButon[aria-expanded='true'] > .line-1 {
-    transform: translate(0, 1px) rotate(-45deg);
-  }
-
-  .toggleButon[aria-expanded='true'] > .line-2 {
-    transform: scale(0);
-  }
-
-  .toggleButon[aria-expanded='true'] > .line-3 {
-    transform: translate(0, -1px) rotate(45deg);
-  }
-
-  .navigation {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 5rem 2rem;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 100dvh;
-    z-index: 5;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.7s;
-  }
-
-  .navigation[aria-hidden='false'] {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  body.menu-open {
-    overflow: hidden;
-  }
-  .navigation ul li {
-    transition: 0.7s;
-  }
-  .navigation[aria-hidden='false'] ul li {
-    transform: translateY(-4px);
-  } */
 
   .content .blog-card {
     border: 1px solid #ccc;
