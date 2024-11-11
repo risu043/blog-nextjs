@@ -14,7 +14,7 @@ const Pagination = ({ totalCount, current = 1 }: PaginationProps) => {
     [...Array(end - start + 1)].map((_, i) => start + i);
 
   return (
-    <ul className="flex gap-4 w-fit mx-auto">
+    <ul className="flex gap-4 w-fit mx-auto mt-4">
       {range(1, Math.ceil(totalCount / PER_PAGE)).map((number) => (
         <li key={number}>
           {current !== number ? (

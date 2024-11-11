@@ -43,13 +43,13 @@ const Header: FC<HeaderProps> = ({ categories }) => {
             <ThemeSwitch />
           </div>
         </div>
+        {isSearchVisible && (
+          <div className="card-body p-4 mb-8 rounded-xl h-fit">
+            <SearchField onSearchSubmit={hideSearch} />
+            <HeaderNav categories={categories} onItemClick={hideSearch} />
+          </div>
+        )}
       </header>
-      {isSearchVisible && (
-        <div className="card-body p-4 mb-8 rounded-xl h-fit">
-          <SearchField onSearchSubmit={hideSearch} />
-          <HeaderNav categories={categories} onItemClick={hideSearch} />
-        </div>
-      )}
     </>
   );
 };

@@ -9,7 +9,7 @@ export default async function Nav() {
     return <h1>No Contents</h1>;
   }
   return (
-    <nav className="card-body p-4 mb-8 rounded-xl h-fit">
+    <div className="card-body p-4 mb-8 rounded-xl h-fit">
       <h2 className="font-kiwi text-xl text-center mb-4">Category</h2>
       <ul className="">
         {contents.map((category) => (
@@ -24,6 +24,6 @@ export default async function Nav() {
           </li>
         ))}
       </ul>
-    </nav>
+    </div>
   );
 }
