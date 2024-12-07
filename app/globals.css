@@ -178,7 +178,7 @@
   }
   @media (768px <= width) {
     pre {
-      max-width: 100%;
+      max-width: 864px;
     }
   }
 
