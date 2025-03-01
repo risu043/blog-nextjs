@@ -32,7 +32,7 @@ const Header: FC<HeaderProps> = ({ categories }) => {
             {isSearchVisible ? (
               <RxCross2 size={25} />
             ) : (
-              <FaMagnifyingGlass size={25} />
+              <FaMagnifyingGlass size={25} className="hover:animate-pudding" />
             )}
           </button>
 

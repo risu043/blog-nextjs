@@ -20,13 +20,13 @@ const Profile: React.FC = () => {
       <p className="text-sm mb-4">りすさんの学習記録。</p>
       <div className="border-dotted border-t-2 border-neutral-400 pt-4 flex justify-center gap-4">
         <Link href="https://github.com/risu043">
-          <FaGithub size={25} />
+          <FaGithub size={25} className="hover:animate-pudding" />
         </Link>
         <Link href="https://x.com/risu043">
-          <FaXTwitter size={25} />
+          <FaXTwitter size={25} className="hover:animate-pudding" />
         </Link>
         <Link href="/blogs/mail">
-          <MdMail size={30} />
+          <MdMail size={30} className="hover:animate-pudding" />
         </Link>
       </div>
     </div>
